@@ -5,7 +5,7 @@ import html
 import re
 
 def take_100_posts():
-    token = '3b0860173b0860173b086017ee38106cae33b083b0860175d2c88defbd04f39ee225f05'
+    token = '////'
     domain = 'insidebmxru'
     version = '5.199'
     count = 100
