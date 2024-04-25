@@ -4,7 +4,7 @@ import csv
 import html
 import re
 
-def take_100_posts():
+def take_500_posts():
     token = '////'
     domain = 'insidebmxru'
     version = '5.199'
