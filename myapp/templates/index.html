@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Black Page</title>
+  <style>
+    /* Add the CSS style for the images here */
+
+    .img-container {
+      height: 0;
+      padding-bottom: 52%;
+      position: relative;
+    }
+
+    .img-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .link {
+      text-decoration: none;
+      color: black;
+      margin: 0 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: 1px solid white;
+      background-color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .link:hover {
+      background-color: black;
+      color: white;
+    }
+
+    section {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    section div {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid white;
+      background-color: black;
+    }
+
+    section h3 {
+      color: white;
+    }
+
+    section img {
+      margin-top: 10px;
+    }
+
+    section p {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header"> <a href="{% url 'myapp:index' %}" class="link">bar_to_whip</a> <a href="{% url 'myapp:baraholka' %}" class="link">барахолка</a> <a href="{% url 'myapp:add_product' %}" class="link">контакты</a> </div>
+  <div class="img-container"> <img src="https://images.wallpaperscraft.ru/image/single/velosiped_bmh_chelovek_179109_2560x1600.jpg" alt="Bicycle with a man"> </div>
+  <!-- Вставленные данные из парсера -->
+  <section>
+    <h2>Новости</h2> {% for post in news_list %}
+    <div>
+      <h3>{{ post.title }}</h3> <img src="{{ post.published_date }}" alt="Изображение">
+      <p>{{ post.content }}</p>
+    </div> {% empty %}
+    <div>
+      <p>Нет новостей.</p>
+    </div> {% endfor %} </section>
+</body>
+
+</html>
